@@ -18,9 +18,11 @@ export const LeaseForm = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("http://localhost:3001/units").then((res) => setUnits(res.data));
     axios
-      .get("http://localhost:3001/tenants")
+      .get("https://proptelybackend-production.up.railway.app/units")
+      .then((res) => setUnits(res.data));
+    axios
+      .get("https://proptelybackend-production.up.railway.app/tenants")
       .then((res) => setTenants(res.data));
   }, []);
 
