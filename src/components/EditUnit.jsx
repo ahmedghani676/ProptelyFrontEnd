@@ -18,7 +18,7 @@ export const EditUnit = () => {
   const [submitError, setSubmitError] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:3001/units/${id}`)
+    fetch(`https://proptelybackend-production.up.railway.app:3001/units/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setForm({
@@ -30,11 +30,11 @@ export const EditUnit = () => {
       })
       .catch(() => setSubmitError("Failed to load unit data."));
 
-    fetch("http://localhost:3001/properties")
+    fetch("https://proptelybackend-production.up.railway.app:3001/properties")
       .then((res) => res.json())
       .then(setProperties);
 
-    fetch("http://localhost:3001/landlords")
+    fetch("https://proptelybackend-production.up.railway.app:3001/landlords")
       .then((res) => res.json())
       .then(setLandlords);
   }, [id]);

@@ -24,11 +24,14 @@ export const LandlordForm = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:3001/landlords", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, contact }),
-      });
+      const res = await fetch(
+        "https://proptelybackend-production.up.railway.app:3001/landlords",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, contact }),
+        }
+      );
 
       if (!res.ok) throw new Error("Failed to save landlord");
 

@@ -14,7 +14,9 @@ const EditProperty = () => {
   const [submitError, setSubmitError] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:3001/properties/${id}`)
+    fetch(
+      `https://proptelybackend-production.up.railway.app:3001/properties/${id}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setForm({ name: data.name || "", location: data.location || "" });
@@ -44,11 +46,14 @@ const EditProperty = () => {
     }
 
     try {
-      const res = await fetch(`http://localhost:3001/properties/${id}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
+      const res = await fetch(
+        `https://proptelybackend-production.up.railway.app:3001/properties/${id}`,
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(form),
+        }
+      );
 
       if (!res.ok) throw new Error("Update failed");
 

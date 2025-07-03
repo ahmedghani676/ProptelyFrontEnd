@@ -14,7 +14,9 @@ export const EditLandlord = () => {
   const [submitError, setSubmitError] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:3001/landlords/${id}`)
+    fetch(
+      `https://proptelybackend-production.up.railway.app:3001/landlords/${id}`
+    )
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch landlord");
         return res.json();
@@ -52,11 +54,14 @@ export const EditLandlord = () => {
     }
 
     try {
-      const res = await fetch(`http://localhost:3001/landlords/${id}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
+      const res = await fetch(
+        `https://proptelybackend-production.up.railway.app:3001/landlords/${id}`,
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(form),
+        }
+      );
 
       if (!res.ok) throw new Error("Update failed");
 

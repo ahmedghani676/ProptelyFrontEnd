@@ -24,11 +24,14 @@ const PropertyForm = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:3001/properties", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, location }),
-      });
+      const res = await fetch(
+        "https://proptelybackend-production.up.railway.app:3001/properties",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, location }),
+        }
+      );
 
       if (!res.ok) throw new Error("Failed to add property");
       navigate("/");

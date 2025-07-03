@@ -5,16 +5,19 @@ export const LandlordList = () => {
   const [landlords, setLandlords] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/landlords")
+    fetch("https://proptelybackend-production.up.railway.app:3001/landlords")
       .then((res) => res.json())
       .then((data) => setLandlords(data));
   }, []);
 
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this landlord?")) {
-      await fetch(`http://localhost:3001/landlords/${id}`, {
-        method: "DELETE",
-      });
+      await fetch(
+        `https://proptelybackend-production.up.railway.app:3001/landlords/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
       setLandlords(landlords.filter((l) => l.id !== id));
     }
   };

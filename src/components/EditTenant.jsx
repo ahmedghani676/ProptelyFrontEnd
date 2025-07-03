@@ -14,7 +14,9 @@ export const EditTenant = () => {
   const [submitError, setSubmitError] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:3001/tenants/${id}`)
+    fetch(
+      `https://proptelybackend-production.up.railway.app:3001/tenants/${id}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setForm({
@@ -47,11 +49,14 @@ export const EditTenant = () => {
     }
 
     try {
-      const res = await fetch(`http://localhost:3001/tenants/${id}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
+      const res = await fetch(
+        `https://proptelybackend-production.up.railway.app:3001/tenants/${id}`,
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(form),
+        }
+      );
 
       if (!res.ok) throw new Error("Failed to update tenant.");
       navigate("/tenants");

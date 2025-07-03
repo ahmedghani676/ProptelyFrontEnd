@@ -13,10 +13,10 @@ export const UnitForm = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:3001/properties")
+    fetch("https://proptelybackend-production.up.railway.app:3001/properties")
       .then((res) => res.json())
       .then(setProperties);
-    fetch("http://localhost:3001/landlords")
+    fetch("https://proptelybackend-production.up.railway.app:3001/landlords")
       .then((res) => res.json())
       .then(setLandlords);
   }, []);

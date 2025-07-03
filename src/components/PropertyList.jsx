@@ -8,7 +8,7 @@ const PropertyList = () => {
 
   const fetchProperties = () => {
     setLoading(true);
-    fetch("http://localhost:3001/properties")
+    fetch("https://proptelybackend-production.up.railway.app:3001/properties")
       .then((res) => res.json())
       .then((data) => {
         setProperties(data);
@@ -27,9 +27,12 @@ const PropertyList = () => {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this property?")) {
       try {
-        await fetch(`http://localhost:3001/properties/${id}`, {
-          method: "DELETE",
-        });
+        await fetch(
+          `https://proptelybackend-production.up.railway.app:3001/properties/${id}`,
+          {
+            method: "DELETE",
+          }
+        );
         fetchProperties();
       } catch (err) {
         setError("Failed to delete property");

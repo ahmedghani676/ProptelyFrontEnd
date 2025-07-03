@@ -51,7 +51,10 @@ export const LeaseForm = () => {
     e.preventDefault();
     if (!validate()) return;
     try {
-      await axios.post("http://localhost:5000/api/leases", formData);
+      await axios.post(
+        "https://proptelybackend-production.up.railway.app:3001/leases",
+        formData
+      );
       navigate("/leases");
     } catch (error) {
       console.error("Error creating lease:", error);

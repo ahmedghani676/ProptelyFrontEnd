@@ -5,14 +5,17 @@ export const UnitList = () => {
   const [units, setUnits] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/units")
+    fetch("https://proptelybackend-production.up.railway.app:3001/units")
       .then((res) => res.json())
       .then((data) => setUnits(data));
   }, []);
 
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this unit?")) {
-      await fetch(`http://localhost:3001/units/${id}`, { method: "DELETE" });
+      await fetch(
+        `https://proptelybackend-production.up.railway.app:3001/units/${id}`,
+        { method: "DELETE" }
+      );
       setUnits(units.filter((u) => u.id !== id));
     }
   };

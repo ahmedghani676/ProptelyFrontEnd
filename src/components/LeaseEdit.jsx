@@ -20,7 +20,9 @@ export function EditLease() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/leases/${id}`)
+      .get(
+        `https://proptelybackend-production.up.railway.app:3001/leases/${id}`
+      )
       .then((res) => setForm(res.data))
       .catch(() => setSubmitError("Failed to load lease data"));
   }, [id]);
@@ -45,7 +47,10 @@ export function EditLease() {
     }
 
     try {
-      await axios.put(`http://localhost:3001/leases/${id}`, form);
+      await axios.put(
+        `https://proptelybackend-production.up.railway.app:3001/leases/${id}`,
+        form
+      );
       navigate("/leases");
     } catch (error) {
       setSubmitError("Failed to update lease");

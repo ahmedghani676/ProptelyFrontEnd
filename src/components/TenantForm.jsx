@@ -24,11 +24,14 @@ export const TenantForm = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:3001/tenants", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, contact }),
-      });
+      const res = await fetch(
+        "https://proptelybackend-production.up.railway.app:3001/tenants",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, contact }),
+        }
+      );
       if (!res.ok) throw new Error("Failed to create tenant");
       navigate("/tenants");
     } catch (err) {

@@ -168,9 +168,7 @@ const UnitOverview = () => {
             </div>
           </div>
 
-          {/* Occupancy & Facility & Completion */}
           <div className="bg-white p-4 shadow rounded-lg space-y-4">
-            {/* Occupancy */}
             <div>
               <div className="font-medium mb-1">Occupancy Status</div>
               <div className="relative w-24 h-24 mx-auto">
@@ -198,7 +196,6 @@ const UnitOverview = () => {
               </div>
             </div>
 
-            {/* Facility Management */}
             <div>
               <div className="font-medium mb-1">Facility Management</div>
               <div className="h-2 bg-gray-200 rounded-full">
@@ -209,7 +206,6 @@ const UnitOverview = () => {
               </div>
             </div>
 
-            {/* Completion Status */}
             <div>
               <div className="font-medium mb-1">Completion Status</div>
               <div className="h-2 bg-gray-200 rounded-full">
@@ -221,7 +217,6 @@ const UnitOverview = () => {
             </div>
           </div>
 
-          {/* Commission Snapshot */}
           <div className="bg-white p-4 shadow rounded-lg">
             <div className="font-medium mb-2">Commission</div>
             <div className="space-y-2 text-sm">
@@ -237,7 +232,6 @@ const UnitOverview = () => {
             </div>
           </div>
 
-          {/* Unit Information */}
           <div className="bg-white p-4 shadow rounded-lg">
             <div className="font-medium mb-2">Unit Information</div>
             <ul className="text-sm space-y-1">
