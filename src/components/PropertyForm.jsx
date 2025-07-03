@@ -25,7 +25,7 @@ const PropertyForm = () => {
 
     try {
       const res = await fetch(
-        "https://proptelybackend-production.up.railway.app:3001/properties",
+        "https://proptelybackend-production.up.railway.app/properties",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
