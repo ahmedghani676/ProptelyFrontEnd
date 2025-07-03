@@ -8,7 +8,7 @@ const PropertyList = () => {
 
   const fetchProperties = () => {
     setLoading(true);
-    fetch("https://proptelybackend-production.up.railway.app:3001/properties")
+    fetch("https://proptelybackend-production.up.railway.app/properties")
       .then((res) => res.json())
       .then((data) => {
         setProperties(data);
