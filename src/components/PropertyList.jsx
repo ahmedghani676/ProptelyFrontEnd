@@ -28,7 +28,7 @@ const PropertyList = () => {
     if (window.confirm("Are you sure you want to delete this property?")) {
       try {
         await fetch(
-          `https://proptelybackend-production.up.railway.app:3001/properties/${id}`,
+          `https://proptelybackend-production.up.railway.app/properties/${id}`,
           {
             method: "DELETE",
           }
