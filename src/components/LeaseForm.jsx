@@ -59,7 +59,10 @@ export const LeaseForm = () => {
       );
       navigate("/leases");
     } catch (error) {
-      console.error("Error creating lease:", error);
+      console.error(
+        "Error creating lease:",
+        error.response?.data || error.message
+      );
     }
   };
 
