@@ -52,7 +52,7 @@ export const LeaseForm = () => {
     if (!validate()) return;
     try {
       await axios.post(
-        "https://proptelybackend-production.up.railway.app:3001/leases",
+        "https://proptelybackend-production.up.railway.app/leases",
         formData
       );
       navigate("/leases");

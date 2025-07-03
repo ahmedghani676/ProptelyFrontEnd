@@ -13,10 +13,10 @@ export const UnitForm = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("https://proptelybackend-production.up.railway.app:3001/properties")
+    fetch("https://proptelybackend-production.up.railway.app/properties")
       .then((res) => res.json())
       .then(setProperties);
-    fetch("https://proptelybackend-production.up.railway.app:3001/landlords")
+    fetch("https://proptelybackend-production.up.railway.app/landlords")
       .then((res) => res.json())
       .then(setLandlords);
   }, []);
@@ -39,16 +39,19 @@ export const UnitForm = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:3001/units", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          unitNo,
-          status,
-          propertyId: Number(propertyId),
-          landlordId: Number(landlordId),
-        }),
-      });
+      const res = await fetch(
+        "https://proptelybackend-production.up.railway.app/units",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            unitNo,
+            status,
+            propertyId: Number(propertyId),
+            landlordId: Number(landlordId),
+          }),
+        }
+      );
       if (!res.ok) throw new Error("Failed to create unit");
       navigate("/units");
     } catch (err) {

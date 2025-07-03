@@ -55,7 +55,7 @@ export const EditLandlord = () => {
 
     try {
       const res = await fetch(
-        `https://proptelybackend-production.up.railway.app:3001/landlords/${id}`,
+        `https://proptelybackend-production.up.railway.app/landlords/${id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },

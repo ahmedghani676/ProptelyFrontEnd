@@ -25,7 +25,7 @@ export const TenantForm = () => {
 
     try {
       const res = await fetch(
-        "https://proptelybackend-production.up.railway.app:3001/tenants",
+        "https://proptelybackend-production.up.railway.app/tenants",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

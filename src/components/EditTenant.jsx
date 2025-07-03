@@ -50,7 +50,7 @@ export const EditTenant = () => {
 
     try {
       const res = await fetch(
-        `https://proptelybackend-production.up.railway.app:3001/tenants/${id}`,
+        `https://proptelybackend-production.up.railway.app/tenants/${id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },

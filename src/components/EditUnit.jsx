@@ -63,16 +63,19 @@ export const EditUnit = () => {
     }
 
     try {
-      const res = await fetch(`http://localhost:3001/units/${id}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          unitNo: form.unitNo,
-          status: form.status,
-          propertyId: Number(form.propertyId),
-          landlordId: Number(form.landlordId),
-        }),
-      });
+      const res = await fetch(
+        `https://proptelybackend-production.up.railway.app/units/${id}`,
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            unitNo: form.unitNo,
+            status: form.status,
+            propertyId: Number(form.propertyId),
+            landlordId: Number(form.landlordId),
+          }),
+        }
+      );
 
       if (!res.ok) throw new Error("Update failed");
 

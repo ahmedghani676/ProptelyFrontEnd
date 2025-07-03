@@ -5,7 +5,7 @@ export const LandlordList = () => {
   const [landlords, setLandlords] = useState([]);
 
   useEffect(() => {
-    fetch("https://proptelybackend-production.up.railway.app:3001/landlords")
+    fetch("https://proptelybackend-production.up.railway.app/landlords")
       .then((res) => res.json())
       .then((data) => setLandlords(data));
   }, []);
@@ -13,7 +13,7 @@ export const LandlordList = () => {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this landlord?")) {
       await fetch(
-        `https://proptelybackend-production.up.railway.app:3001/landlords/${id}`,
+        `https://proptelybackend-production.up.railway.app/landlords/${id}`,
         {
           method: "DELETE",
         }

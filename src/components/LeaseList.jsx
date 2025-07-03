@@ -7,13 +7,13 @@ export function LeaseList() {
 
   useEffect(() => {
     axios
-      .get("https://proptelybackend-production.up.railway.app:3001/leases/")
+      .get("https://proptelybackend-production.up.railway.app/leases/")
       .then((res) => setLeases(res.data));
   }, []);
 
   const handleDelete = async (id) => {
     await axios.delete(
-      `https://proptelybackend-production.up.railway.app:3001/leases/${id}`
+      `https://proptelybackend-production.up.railway.app/leases/${id}`
     );
     setLeases((prev) => prev.filter((lease) => lease.id !== id));
   };

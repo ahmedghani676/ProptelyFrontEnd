@@ -47,7 +47,7 @@ const EditProperty = () => {
 
     try {
       const res = await fetch(
-        `https://proptelybackend-production.up.railway.app:3001/properties/${id}`,
+        `https://proptelybackend-production.up.railway.app/properties/${id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
